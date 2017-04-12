@@ -2,7 +2,8 @@
   "name": "jsonbox",
   "version": "0.0.1",
   "description": "Command Line utility to transform JSON files",
-  "main": "cli.js",
+  "main": "index.js",
+  "bin": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/israelroldan/jsonbox.git"
@@ -18,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/israelroldan/jsonbox/issues"
   },
-  "homepage": "https://github.com/israelroldan/jsonbox#readme"
+  "homepage": "https://github.com/israelroldan/jsonbox#readme",
+  "dependencies": {
+    "assignment": "^2.2.1",
+    "escape-string-regexp": "^1.0.5",
+    "flat": "^2.0.1",
+    "get-stdin": "^5.0.1",
+    "log-symbols": "^1.0.2",
+    "switchit": "^1.0.7"
+  }
 }
