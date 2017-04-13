@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Command Line utility to transform JSON files",
   "main": "index.js",
-  "bin": "index.js",
+  "bin": "bin/jsonbox",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/israelroldan/jsonbox.git"

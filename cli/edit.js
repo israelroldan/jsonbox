@@ -1,11 +1,8 @@
+const jsonbox = require('../');
+
 const switchit = require('switchit');
 const Command = switchit.Command;
 const Type = switchit.Type;
-
-const assignment = require('assignment');
-const escapeStringRegexp = require('escape-string-regexp');
-const flatten = require('flat');
-const unflatten = flatten.unflatten;
 
 class edit extends Command {
     beforeExecute (params) {
@@ -32,7 +29,7 @@ class edit extends Command {
                 }
                 transform[p.slice(0, equals)] = value;
             });
-            params.toset = transform;
+            params.toset = unflatten(transform);
         }
     }
     execute (params) {
@@ -43,21 +40,11 @@ class edit extends Command {
         if (params.interactive) {
             logger.warn("Interactive mode not yet supported 😞");
         } else {
-            var data = config.get('env.data');
-            assignment(data, unflatten(params.toset));
-            if (params.remove) {
-                data = flatten(data);
-                params.remove.forEach((r) => {
-                    let regex = new RegExp(`${escapeStringRegexp(r)}(\\.|$)`);
-                    Object.keys(data).forEach((k) => {
-                        if (regex.test(k)) {
-                            delete data[k];
-                        }
-                    });
-                });
-                data = unflatten(data);
-            }
-            config.set('env.data', data);
+            config.set('env.data',
+                new jsonbox(config.get('env.data'))
+                    .set(params.toset)
+                    .remove(params.remove)
+                );
         }
     }
 }
