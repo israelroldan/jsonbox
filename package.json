@@ -1,6 +1,6 @@
 {
   "name": "jsonbox",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Command Line utility to transform JSON files",
   "main": "index.js",
   "bin": "bin/jsonbox",
