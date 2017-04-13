@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const jsonbox = require('./cli');
+const jsonbox = require('../cli');
 
 new jsonbox()
     .run(process.argv.slice(2))
