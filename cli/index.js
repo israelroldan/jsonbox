@@ -8,6 +8,7 @@ const path = require('path');
 
 const create = require('./create');
 const edit = require('./edit');
+const get = require('./get');
 const open = require('./open');
 const show = require('./show');
 const write = require('./write');
@@ -53,7 +54,8 @@ jsonbox.define({
         help: switchit.commands.Help,
         open: open,
         show: show,
-        write: write
+        write: write,
+        get: get
     },
     switches: '[s#stdin:boolean=false] [version:boolean=false]',
     log: log,

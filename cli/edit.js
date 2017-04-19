@@ -4,6 +4,9 @@ const switchit = require('switchit');
 const Command = switchit.Command;
 const Type = switchit.Type;
 
+const flatten = require('flat');
+const unflatten = flatten.unflatten;
+
 class edit extends Command {
     beforeExecute (params) {
         if (params.set.length > 0) {
@@ -44,6 +47,7 @@ class edit extends Command {
                 new jsonbox(config.get('env.data'))
                     .set(params.toset)
                     .remove(params.remove)
+                    .build()
                 );
         }
     }
