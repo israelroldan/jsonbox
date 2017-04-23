@@ -10,7 +10,7 @@ class write extends Command {
         let logger = root.getLogger();
         let config = root.getConfig();
 
-        if (config.has('env.inputPath') && params.inPlace) {
+        if (config.has('env.inputPath') && !params.outputPath) {
             params.outputPath = config.get('env.inputPath');
         }
 

@@ -8,7 +8,10 @@ class open extends Command {
         const config = root.getConfig();
         const logger = root.getLogger();
 
-        try {           
+        try {
+            if (config.has('env.data')) {
+                logger.debug('Data was previously loaded, overwriting...');
+            }
             config.set('env.data', require(path.resolve(params.path)));
             config.set('env.inputPath', params.path)
         } catch (err) {

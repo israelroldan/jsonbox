@@ -6,7 +6,7 @@ new jsonbox()
     .run(process.argv.slice(2))
     .catch((err) => {
         if (err.message) {
-            jsonbox.log.error(err.message);
+            jsonbox.log.error(err);
         } else {
             jsonbox.log.error(err);
         }

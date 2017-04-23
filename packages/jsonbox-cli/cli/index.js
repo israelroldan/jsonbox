@@ -21,14 +21,12 @@ class jsonbox extends switchit.Container {
         if (params.version) {
             logger.info('version:', config.get('jsonbox.pkg.version'));            
         } else {
-            if (params.stdin) {
-                return getStdin().then(str => {
+            return getStdin().then(str => {
+                try {
                     config.set('env.data', JSON.parse(str));
-                    return super.execute(params, args)
-                });
-            } else {
-                return super.execute(params, args);   
-            }
+                } catch (ignore) {}
+                return super.execute(params, args);
+            });
         }
     }
     getLogger () {
