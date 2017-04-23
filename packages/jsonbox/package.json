@@ -1,17 +1,13 @@
 {
   "name": "jsonbox",
-  "version": "0.9.0",
-  "description": "Command Line utility to transform JSON files",
+  "version": "0.9.1",
+  "description": "Utility library to transform JSON files",
   "main": "index.js",
-  "bin": "bin/jsonbox",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/israelroldan/jsonbox.git"
   },
   "keywords": [
-    "command",
-    "line",
-    "cli",
     "json"
   ],
   "author": "Israel Roldan (github@israelroldan.com)",
