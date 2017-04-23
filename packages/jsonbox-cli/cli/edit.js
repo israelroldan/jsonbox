@@ -1,4 +1,4 @@
-const jsonbox = require('../');
+const jsonbox = require('jsonbox');
 
 const switchit = require('switchit');
 const Command = switchit.Command;

@@ -1,0 +1,31 @@
+{
+  "name": "jsonbox-cli",
+  "version": "0.9.1",
+  "description": "Command Line utility to transform JSON files",
+  "main": "cli/index.js",
+  "bin": "bin/jsonbox",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/israelroldan/jsonbox.git"
+  },
+  "keywords": [
+    "command",
+    "line",
+    "cli",
+    "json"
+  ],
+  "author": "Israel Roldan (github@israelroldan.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/israelroldan/jsonbox/issues"
+  },
+  "homepage": "https://github.com/israelroldan/jsonbox#readme",
+  "dependencies": {
+    "flat": "^2.0.1",
+    "get-stdin": "^5.0.1",
+    "jsonbox": "^0.2.2",
+    "log-symbols": "^1.0.2",
+    "switchit": "^1.0.7"
+  },
+  "foo": "baz"
+}
