@@ -19,6 +19,7 @@
   "dependencies": {
     "assignment": "^2.2.1",
     "escape-string-regexp": "^1.0.5",
-    "flat": "^2.0.1"
+    "flat": "^2.0.1",
+    "properties-parser": "^0.3.1"
   }
 }
