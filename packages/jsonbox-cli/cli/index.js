@@ -19,12 +19,15 @@ class jsonbox extends switchit.Container {
         const config = me.getConfig();
         const logger = me.getLogger();
         if (params.version) {
-            logger.info('version:', config.get('jsonbox.pkg.version'));            
+            logger.info('cli version:', config.get('jsonbox-cli.pkg.version'));
+            logger.info('lib version:', config.get('jsonbox.pkg.version'));
         } else {
             return getStdin().then(str => {
                 try {
                     config.set('env.data', JSON.parse(str));
-                } catch (ignore) {}
+                } catch (ignore) {
+                    // either can't read from stdin or something wrong happened
+                }
                 return super.execute(params, args);
             });
         }
@@ -38,7 +41,8 @@ class jsonbox extends switchit.Container {
 }
 
 const cfg = new Config();
-cfg.load(path.join(__dirname, '../package.json'), 'jsonbox.pkg');
+cfg.load(path.join(__dirname, '../package.json'), 'jsonbox-cli.pkg');
+cfg.load(path.join(require.resolve('jsonbox'), '..', 'package.json'), 'jsonbox.pkg');
 
 jsonbox.define({
     help: {
