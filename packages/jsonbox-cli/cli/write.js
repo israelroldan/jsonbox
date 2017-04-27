@@ -37,7 +37,7 @@ class write extends Command {
 write.define({
     help: 'Writes the json to the specified output path',
     parameters: '{outputPath:string}',
-    switches: '[i#indent:number=2] [e#inPlace:boolean=false] [m#minify:boolean=false]'
+    switches: '[i#indent:number=2] [m#minify:boolean=false]'
 });
 
 module.exports = write;
