@@ -1,6 +1,6 @@
 {
   "name": "jsonbox-cli",
-  "version": "0.9.2",
+  "version": "0.9.4",
   "description": "Command Line utility to transform JSON files",
   "main": "cli/index.js",
   "bin": {
@@ -25,7 +25,7 @@
   "dependencies": {
     "flat": "^2.0.1",
     "get-stdin": "^5.0.1",
-    "jsonbox": "^0.2.2",
+    "jsonbox": "^0.9.0",
     "log-symbols": "^1.0.2",
     "switchit": "^1.0.7"
   },
