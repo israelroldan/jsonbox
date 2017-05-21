@@ -36,6 +36,13 @@ class Jsonbox {
         return JSON.stringify(this._data, null, indent);
     }
 
+    nest (newRoot) {
+        let oldObj = this._data;
+        this._data = {};
+        this._data[newRoot] = oldObj;
+        return this;
+    }
+
     // -----------------------------------------
 
     static fromPropertiesFile (path) {
