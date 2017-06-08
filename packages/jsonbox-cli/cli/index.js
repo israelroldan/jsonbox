@@ -1,10 +1,10 @@
 const getStdin = require('get-stdin');
+const JSON = require('json5');
+const path = require('path');
 const switchit = require('switchit');
 
 const Config = require('./utils/config');
 const log = require('./utils/log');
-
-const path = require('path');
 
 const create = require('./create');
 const edit = require('./edit');

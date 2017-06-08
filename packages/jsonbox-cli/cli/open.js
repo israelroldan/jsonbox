@@ -1,3 +1,5 @@
+const fs = require('fs');
+const JSON = require('json5');
 const path = require('path');
 
 const Command = require('switchit').Command;
@@ -12,7 +14,7 @@ class open extends Command {
             if (config.has('env.data')) {
                 logger.debug('Data was previously loaded, overwriting...');
             }
-            config.set('env.data', require(path.resolve(params.path)));
+            config.set('env.data', JSON.parse(fs.readFileSync(path.resolve(params.path),'utf8')));
             config.set('env.inputPath', params.path)
         } catch (err) {
             logger.error(err.message);

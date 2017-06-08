@@ -25,9 +25,9 @@
   "dependencies": {
     "flat": "^2.0.1",
     "get-stdin": "^5.0.1",
+    "json5": "^0.5.1",
     "jsonbox": "^0.9.6",
     "log-symbols": "^1.0.2",
     "switchit": "^1.0.7"
-  },
-  "foo": "baz"
+  }
 }
