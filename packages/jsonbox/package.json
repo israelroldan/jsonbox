@@ -1,6 +1,6 @@
 {
   "name": "jsonbox",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "description": "Utility library to transform JSON files",
   "main": "index.js",
   "repository": {
