@@ -1,6 +1,6 @@
 {
   "name": "jsonbox",
-  "version": "0.9.8",
+  "version": "0.9.9",
   "description": "Utility library to transform JSON files",
   "main": "index.js",
   "repository": {
@@ -10,7 +10,7 @@
   "scripts": {
     "test": "nyc --reporter=html --reporter=text mocha",
     "test:debug": "nyc --reporter=html --reporter=text mocha --inspect-brk",
-     "coverage": "nyc report --reporter=text-lcov | coveralls"
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "keywords": [
     "json"
