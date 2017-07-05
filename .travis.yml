@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - latest
+  - "node"
 env:
   - TEST_DIR=packages/jsonbox
 script: cd $TEST_DIR && npm install && npm test
