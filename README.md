@@ -1,6 +1,6 @@
 # jsonbox 📦
 
-[![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme) [![npm version](https://badge.fury.io/js/jsonbox.svg)](https://badge.fury.io/js/jsonbox) [![npm version](https://badge.fury.io/js/jsonbox-cli.svg)](https://badge.fury.io/js/jsonbox-cli)
+[![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme) [![npm version](https://badge.fury.io/js/jsonbox.svg)](https://badge.fury.io/js/jsonbox) [![npm version](https://badge.fury.io/js/jsonbox-cli.svg)](https://badge.fury.io/js/jsonbox-cli) [![Build Status](https://travis-ci.org/israelroldan/jsonbox.svg?branch=master)](https://travis-ci.org/israelroldan/jsonbox)
 
 > Library and CLI to transform JSON files
 
