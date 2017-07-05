@@ -7,6 +7,10 @@
     "type": "git",
     "url": "git+https://github.com/israelroldan/jsonbox.git"
   },
+  "scripts": {
+    "test": "nyc --reporter=html --reporter=text mocha",
+    "test:debug": "nyc --reporter=html --reporter=text mocha --inspect-brk"
+  },
   "keywords": [
     "json"
   ],
@@ -22,5 +26,10 @@
     "flat": "^2.0.1",
     "json5": "^0.5.1",
     "properties-parser": "^0.3.1"
+  },
+  "devDependencies": {
+    "assertly": "^1.0.2",
+    "mocha": "^3.4.2",
+    "nyc": "^11.0.3"
   }
 }

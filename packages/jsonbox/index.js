@@ -1,7 +1,6 @@
 const assignment = require('assignment');
 const escapeStringRegexp = require('escape-string-regexp');
-const flatten = require('flat');
-const unflatten = flatten.unflatten;
+const unflatten = require('flat').unflatten;
 
 class Jsonbox {
     constructor (obj) {
@@ -15,16 +14,18 @@ class Jsonbox {
 
     remove (keys) {
         let me = this;
-        me._data = flatten(me._data);
-        keys.forEach((r) => {
-            let regex = new RegExp(`${escapeStringRegexp(r)}(\\.|$)`);
-            Object.keys(me._data).forEach((k) => {
-                if (regex.test(k)) {
-                    delete me._data[k];
+        let removeKey = (key, obj) => {
+            if (key in obj) {
+                delete obj[key];
+            } else if (~key.indexOf('.')) {
+                let obj2 = obj;
+                let first = key.substring(0,key.indexOf('.'));
+                if (first in obj) {
+                    removeKey(key.slice(key.indexOf('.')+1), obj[first]);
                 }
-            });
-        });
-        me._data = unflatten(me._data);
+            }
+        }
+        keys.forEach((k) => removeKey(k,me._data));
         return this;
     }
 
