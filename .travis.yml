@@ -3,4 +3,4 @@ node_js:
   - "node"
 env:
   - TEST_DIR=packages/jsonbox
-script: cd $TEST_DIR && npm install && npm test
+script: cd $TEST_DIR && npm install && npm test && npm run coverage
