@@ -22,14 +22,18 @@ class jsonbox extends switchit.Container {
             logger.info('cli version:', config.get('jsonbox-cli.pkg.version'));
             logger.info('lib version:', config.get('jsonbox.pkg.version'));
         } else {
-            return getStdin().then(str => {
-                try {
-                    config.set('env.data', JSON.parse(str));
-                } catch (ignore) {
-                    // either can't read from stdin or something wrong happened
-                }
+            if (params['ignore-stdin']){
                 return super.execute(params, args);
-            });
+            } else {
+                return getStdin().then(str => {
+                    try {
+                        config.set('env.data', JSON.parse(str));
+                    } catch (ignore) {
+                        // either can't read from stdin or something wrong happened
+                    }
+                    return super.execute(params, args);
+                });
+            }
         }
     }
     getLogger () {
@@ -47,19 +51,18 @@ cfg.load(path.join(require.resolve('jsonbox'), '..', 'package.json'), 'jsonbox.p
 jsonbox.define({
     help: {
         '': cfg.get('jsonbox.pkg.description'),
-        stdin: 'Read from stdin',
+        'ignore-stdin': 'Ignore stdin',
         version: 'Show version info'
     },
     commands: {
         create: create,
         edit: edit,
-        help: switchit.commands.Help,
         open: open,
         show: show,
         write: write,
         get: get
     },
-    switches: '[s#stdin:boolean=false] [version:boolean=false]',
+    switches: '[s#ignore-stdin:boolean=false] [version:boolean=false]',
     log: log,
     config: cfg
 });
