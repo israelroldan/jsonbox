@@ -3,7 +3,7 @@
   "version": "0.9.0",
   "private": true,
   "devDependencies": {
-    "cz-lerna-changelog": "^1.2.1",
+    "cz-lerna-changelog": "^2.0.2",
     "lerna": "^2.0.0-rc.3",
     "lerna-semantic-release": "^9.1.0"
   },
