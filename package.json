@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "cz-lerna-changelog": "^1.2.1",
-    "lerna": "^2.0.0-rc.3",
+    "lerna": "^3.13.3",
     "lerna-semantic-release": "^9.1.0"
   },
   "scripts": {
